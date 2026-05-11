@@ -1,13 +1,19 @@
-# Car Learning Garage - GitHub Backed
+# Car Learning Garage - Enhanced
 
-This version is designed to run as a static HTML app hosted by GitHub Pages.
+This version keeps the original GitHub-backed static app architecture.
 
-GitHub is used for:
+## What changed
 
-1. Hosting the website through GitHub Pages.
-2. Serving the app data from `data/cars.json`.
+- Voice tuning was adjusted to a smooth, warm, kid-friendly browser voice.
+- Added an interactive Sound Match Game.
+- Added a Score page with:
+  - Current game score
+  - Correct answers
+  - Total tries
+  - Best score saved in browser local storage
+  - Star reward display
 
-## Repository layout
+## GitHub-backed structure
 
 ```text
 car-learning-garage/
@@ -20,74 +26,37 @@ car-learning-garage/
     └── cars.json
 ```
 
-## How it works
+## Update data
 
-The app reads vehicle data from:
-
-```text
-./data/cars.json
-```
-
-When this project is published through GitHub Pages, that file is served from your GitHub-hosted website.
-
-Example:
-
-```text
-https://YOUR_USERNAME.github.io/car-learning-garage/data/cars.json
-```
-
-## How to update app content
-
-Edit this file in GitHub:
+Edit:
 
 ```text
 data/cars.json
 ```
 
-Commit the change. GitHub Pages will serve the updated data after the site refreshes.
+Each vehicle can include:
 
-## Optional separate data repo
-
-If you want the app to pull data from a different GitHub repo, edit:
-
-```text
-config.js
+```json
+{
+  "name": "Fire Truck",
+  "type": "Rescue Vehicle",
+  "emoji": "🚒",
+  "color": "Red",
+  "fact": "A fire truck carries firefighters, ladders, and water.",
+  "clue": "Which vehicle helps firefighters?"
+}
 ```
 
-Change:
+## Voice settings
+
+Edit `config.js`:
 
 ```js
-dataUrl: "./data/cars.json"
+rate: 0.78,
+pitch: 1.42,
+volume: 1
 ```
 
-To:
+For a smoother voice, use pitch between `1.25` and `1.45`.
 
-```js
-dataUrl: "https://raw.githubusercontent.com/YOUR_USERNAME/YOUR_DATA_REPO/main/data/cars.json"
-```
-
-## Important security note
-
-Do not put a GitHub token inside browser JavaScript. If the app ever needs an admin screen that writes back to GitHub, use a small secure backend such as a serverless function.
-
-
-## Voice tuning
-
-The voice is tuned in `app.js` inside the `speak(text)` function.
-
-Current child-friendly settings:
-
-```js
-utterance.rate = 0.76;
-utterance.pitch = 1.55;
-utterance.volume = 1;
-```
-
-Higher pitch range: `1.3` to `1.8`
-
-Recommended toddler setting:
-
-```js
-rate: 0.74 - 0.82
-pitch: 1.45 - 1.65
-```
+For a more playful voice, use pitch between `1.45` and `1.6`.

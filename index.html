@@ -59,7 +59,8 @@
         <button id="learnTab" class="tab active" type="button">Learn</button>
         <button id="findTab" class="tab" type="button">Find It</button>
         <button id="colorTab" class="tab" type="button">Colors</button>
-        <button id="rewardTab" class="tab" type="button">Rewards</button>
+        <button id="gameTab" class="tab" type="button">Game</button>
+        <button id="scoreTab" class="tab" type="button">Score</button>
       </section>
 
       <section id="learnPanel" class="panel">
@@ -85,15 +86,61 @@
         </div>
       </section>
 
-      <section id="rewardPanel" class="panel hidden">
-        <h3>Road Trip Rewards</h3>
-        <div class="reward-road">
-          <div id="rewardVehicle" class="reward-vehicle">🚗</div>
+      <section id="gamePanel" class="panel hidden">
+        <h3>Sound Match Game</h3>
+        <p class="game-help">Listen to the clue, then tap the right vehicle.</p>
+
+        <div class="game-score-strip">
+          <div>
+            <span class="score-label">Round</span>
+            <strong id="gameRound">1 / 5</strong>
+          </div>
+          <div>
+            <span class="score-label">Score</span>
+            <strong id="liveScore">0</strong>
+          </div>
         </div>
-        <div id="stars" class="stars"></div>
-        <p id="rewardMessage" class="message good">Answer questions to move the car.</p>
+
         <div class="center">
-          <button id="startDriveButton" class="primary-button" type="button">Take a Drive</button>
+          <button id="playClueButton" class="primary-button" type="button">Play Clue</button>
+        </div>
+
+        <h3 id="gameQuestion" class="game-question">Which vehicle helps firefighters?</h3>
+        <div id="gameGrid" class="grid"></div>
+        <p id="gameMessage" class="message"></p>
+
+        <div class="center">
+          <button id="nextGameQuestion" class="primary-button" type="button">Next Round</button>
+        </div>
+      </section>
+
+      <section id="scorePanel" class="panel hidden">
+        <h3>Score Page</h3>
+
+        <div class="score-card">
+          <div class="score-big" id="finalScore">0</div>
+          <p id="scoreMessage" class="score-message">Play the game to earn stars.</p>
+        </div>
+
+        <div id="scoreStars" class="stars"></div>
+
+        <div class="score-stats">
+          <div>
+            <span class="score-label">Correct</span>
+            <strong id="correctCount">0</strong>
+          </div>
+          <div>
+            <span class="score-label">Tries</span>
+            <strong id="totalTries">0</strong>
+          </div>
+          <div>
+            <span class="score-label">Best</span>
+            <strong id="bestScore">0</strong>
+          </div>
+        </div>
+
+        <div class="center">
+          <button id="resetScoreButton" class="primary-button" type="button">Reset Score</button>
         </div>
       </section>
     </main>

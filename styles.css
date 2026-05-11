@@ -298,7 +298,7 @@ h2 {
 }
 
 .controls { grid-template-columns: repeat(3, 1fr); }
-.tabs { grid-template-columns: repeat(4, 1fr); }
+.tabs { grid-template-columns: repeat(5, 1fr); }
 
 .primary-button {
   background: var(--blue);
@@ -390,39 +390,80 @@ h2 {
   margin-top: 14px;
 }
 
-.reward-road {
-  position: relative;
-  height: 132px;
-  overflow: hidden;
-  border: 6px solid rgba(255,255,255,0.8);
-  border-radius: 28px;
-  background: linear-gradient(180deg, #64748b, #334155);
+.game-help {
+  margin: -8px 0 18px;
+  text-align: center;
+  color: var(--muted);
+  font-size: 1.15rem;
+  font-weight: 800;
 }
 
-.reward-road::before {
-  content: "";
-  position: absolute;
-  inset: 50% 0 auto 0;
-  height: 8px;
-  translate: 0 -50%;
-  background: repeating-linear-gradient(90deg, #fde047 0 62px, transparent 62px 110px);
-  animation: road-move 800ms linear infinite;
+.game-score-strip,
+.score-stats {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  margin: 12px auto 18px;
+  max-width: 520px;
 }
 
-.reward-vehicle {
-  position: absolute;
-  left: 10px;
-  top: 28px;
-  font-size: 4.8rem;
-  filter: drop-shadow(0 12px 7px rgba(15,23,42,0.28));
-  transition: left 650ms ease;
+.score-stats {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.game-score-strip div,
+.score-stats div {
+  padding: 16px;
+  border-radius: 22px;
+  background: white;
+  text-align: center;
+  box-shadow: 0 8px 18px rgba(15,23,42,0.08);
+}
+
+.score-label {
+  display: block;
+  margin-bottom: 6px;
+  color: var(--muted);
+  font-size: 0.85rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.game-question {
+  margin-top: 22px !important;
+}
+
+.score-card {
+  max-width: 520px;
+  margin: 0 auto 18px;
+  padding: 26px;
+  border-radius: 30px;
+  background: white;
+  text-align: center;
+  box-shadow: 0 12px 28px rgba(15,23,42,0.12);
+}
+
+.score-big {
+  font-size: clamp(4rem, 14vw, 7rem);
+  font-weight: 900;
+  color: var(--blue);
+  line-height: 1;
+}
+
+.score-message {
+  margin: 10px 0 0;
+  color: var(--muted);
+  font-size: 1.25rem;
+  font-weight: 800;
 }
 
 .stars {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   gap: 8px;
-  margin-top: 14px;
+  max-width: 520px;
+  margin: 14px auto;
 }
 
 .star {
@@ -481,7 +522,7 @@ footer {
 
 @media (max-width: 560px) {
   .app { padding: 12px; }
-  .controls, .tabs { grid-template-columns: 1fr; }
+  .controls, .tabs, .game-score-strip, .score-stats { grid-template-columns: 1fr; }
   .grid { grid-template-columns: repeat(2, 1fr); }
   .tile { min-height: 128px; }
   .tile .emoji { font-size: 3.3rem; }
