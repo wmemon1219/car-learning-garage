@@ -1,0 +1,20 @@
+[
+  {
+    "name": "Car",
+    "type": "Everyday Vehicle",
+    "emoji": "\ud83d\ude97",
+    "fact": "A car helps people go from one place to another."
+  },
+  {
+    "name": "Race Car",
+    "type": "Fast Vehicle",
+    "emoji": "\ud83c\udfce\ufe0f",
+    "fact": "A race car goes very fast on a track."
+  },
+  {
+    "name": "Fire Truck",
+    "type": "Rescue Vehicle",
+    "emoji": "\ud83d\ude92",
+    "fact": "A fire truck carries firefighters and water."
+  }
+]
